@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Edouard Degeest</title>
+    <script type="module" crossorigin src="/main.js"></script>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body class="light-theme">
+    <div class="experience">
+      <canvas class="experience-canvas"></canvas>
+    </div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="preloader-wrapper">
+        <div class="loading">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+    <div class="page" asscroll-container>
+
+      <div class="toggle-bar">
+        <div class="sun-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path fill="currentColor" d="M12 5Q11.575 5 11.288 4.712Q11 4.425 11 4V2Q11 1.575 11.288 1.287Q11.575 1 12 1Q12.425 1 12.713 1.287Q13 1.575 13 2V4Q13 4.425 12.713 4.712Q12.425 5 12 5ZM16.95 7.05Q16.675 6.775 16.675 6.362Q16.675 5.95 16.95 5.65L18.35 4.225Q18.65 3.925 19.062 3.925Q19.475 3.925 19.775 4.225Q20.05 4.5 20.05 4.925Q20.05 5.35 19.775 5.625L18.35 7.05Q18.075 7.325 17.65 7.325Q17.225 7.325 16.95 7.05ZM20 13Q19.575 13 19.288 12.712Q19 12.425 19 12Q19 11.575 19.288 11.287Q19.575 11 20 11H22Q22.425 11 22.712 11.287Q23 11.575 23 12Q23 12.425 22.712 12.712Q22.425 13 22 13ZM12 23Q11.575 23 11.288 22.712Q11 22.425 11 22V20Q11 19.575 11.288 19.288Q11.575 19 12 19Q12.425 19 12.713 19.288Q13 19.575 13 20V22Q13 22.425 12.713 22.712Q12.425 23 12 23ZM5.65 7.05 4.225 5.65Q3.925 5.35 3.925 4.925Q3.925 4.5 4.225 4.225Q4.5 3.95 4.925 3.95Q5.35 3.95 5.625 4.225L7.05 5.65Q7.325 5.925 7.325 6.35Q7.325 6.775 7.05 7.05Q6.75 7.325 6.35 7.325Q5.95 7.325 5.65 7.05ZM18.35 19.775 16.95 18.35Q16.675 18.05 16.675 17.638Q16.675 17.225 16.95 16.95Q17.225 16.675 17.638 16.675Q18.05 16.675 18.35 16.95L19.775 18.35Q20.075 18.625 20.062 19.05Q20.05 19.475 19.775 19.775Q19.475 20.075 19.05 20.075Q18.625 20.075 18.35 19.775ZM2 13Q1.575 13 1.288 12.712Q1 12.425 1 12Q1 11.575 1.288 11.287Q1.575 11 2 11H4Q4.425 11 4.713 11.287Q5 11.575 5 12Q5 12.425 4.713 12.712Q4.425 13 4 13ZM4.225 19.775Q3.95 19.5 3.95 19.075Q3.95 18.65 4.225 18.375L5.65 16.95Q5.925 16.675 6.338 16.675Q6.75 16.675 7.05 16.95Q7.35 17.25 7.35 17.663Q7.35 18.075 7.05 18.375L5.65 19.775Q5.35 20.075 4.925 20.075Q4.5 20.075 4.225 19.775ZM12 18Q9.5 18 7.75 16.25Q6 14.5 6 12Q6 9.5 7.75 7.75Q9.5 6 12 6Q14.5 6 16.25 7.75Q18 9.5 18 12Q18 14.5 16.25 16.25Q14.5 18 12 18ZM12 16Q13.65 16 14.825 14.825Q16 13.65 16 12Q16 10.35 14.825 9.175Q13.65 8 12 8Q10.35 8 9.175 9.175Q8 10.35 8 12Q8 13.65 9.175 14.825Q10.35 16 12 16Z"/></svg>
+        </div>
+        <button class="toggle-button">
+          <div class="toggle-circle"></div>
+        </button>
+        <a href="#" id="scroll" style="display: none;"><span></span></a>
+        <div class="moon-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path fill="currentColor" d="M12 21Q8.25 21 5.625 18.375Q3 15.75 3 12Q3 8.25 5.625 5.625Q8.25 3 12 3Q12.35 3 12.688 3.025Q13.025 3.05 13.35 3.1Q12.325 3.825 11.713 4.987Q11.1 6.15 11.1 7.5Q11.1 9.75 12.675 11.325Q14.25 12.9 16.5 12.9Q17.875 12.9 19.025 12.287Q20.175 11.675 20.9 10.65Q20.95 10.975 20.975 11.312Q21 11.65 21 12Q21 15.75 18.375 18.375Q15.75 21 12 21ZM12 19Q14.2 19 15.95 17.788Q17.7 16.575 18.5 14.625Q18 14.75 17.5 14.825Q17 14.9 16.5 14.9Q13.425 14.9 11.262 12.738Q9.1 10.575 9.1 7.5Q9.1 7 9.175 6.5Q9.25 6 9.375 5.5Q7.425 6.3 6.213 8.05Q5 9.8 5 12Q5 14.9 7.05 16.95Q9.1 19 12 19ZM11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Z"/></svg>
+        </div>
+      </div>
+      <div class="page-wrapper" asscroll>
+        <section class="hero">
+          <div class="hero-wrapper">
+            <!-- Intro Stuff -->
+            <div class="intro-text"> Bienvenue sur mon portfolio !</div>
+            <div class="arrow-svg-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path fill="currentColor" d="M12 14.95q-.2 0-.375-.063-.175-.062-.325-.212L6.675 10.05q-.275-.275-.262-.688.012-.412.287-.687.275-.275.7-.275.425 0 .7.275l3.9 3.9 3.925-3.925q.275-.275.688-.263.412.013.687.288.275.275.275.7 0 .425-.275.7l-4.6 4.6q-.15.15-.325.212-.175.063-.375.063Z"/></svg>
+            </div>
+
+            <div class="hero-main">
+              <h1 class="hero-main-title">Edouard Degeest</h1>
+              <p class="hero-main-description">UX/UI Designer | Développeur Web</p>
+            </div>
+
+            <div class="hero-second">
+              <p class="hero-second-subheading first-sub">Mon</p>
+              <p class="hero-second-subheading second-sub">Portfolio</p>
+            </div>
+
+          </div>
+        </section>
+
+        <div class="first-move section-margin"></div>
+
+        <section class="first-section section left">
+          <div class="progress-wrapper progress-bar-wrapper-left">
+            <div class="progress-bar"></div>
+          </div>
+
+          <div class="section-intro-wrapper">
+            <h1 class="section-title">
+              <span class="section-title-text">A propos</span>
+              <div class="section-title-decoration styleOne"></div>
+              <div class="section-title-decoration styleTwo"></div>
+              <div class="section-title-decoration styleThree"></div>
+            </h1>
+            <span class="section-number">01</span>
+          </div>
+          
+
+          <div class="section-detail-wrapper">
+         <h3 class="section-heading">Hello 👋!</h3>
+            <p class="section-text">Je me présente, je suis Edouard, 20 ans et bourré de motivation !</p>
+            <p class="section-text">Étudiant chez Epitech Digital Bachelor Web Design, J'adore la création graphique ainsi que le développement web ✨!</p>
+            <h3 class="section-heading">Pourquoi m'engager pour votre projet ? 🎨🖥️</h3>
+          <br>
+          <p class="section-text">Je suis motivé par la création, entreprenant, sociable et à l'écoute.</p>
+          <p class="section-text">Persuader que ma polyvalence web pourra vous convenir, je saurai mettre en
+            en avant mon côté créatif et m'épanouir dans ce domaine qui est ma passion et mon futur métier.
+          </p>             
+          <h3 class="section-heading">Mes services :</h3>
+             <div class="container">
+              <div class="serviceBox">
+                <div class="icon" style="--i: #a955e9">
+                  <i class="fab fa-sketch"></i>              
+                </div>
+                <div class="content">
+                  <h2>Web Designer</h2>
+                  <p>
+                    Le Web Designer est, selon la formule consacrée, « le créatif multimédia du numérique ». C’est lui qui va traduire en style graphique le brief du client.
+                  </p>
+                </div>
+              </div>
+             </div>
+             <div class="container">
+              <div class="serviceBox">
+                <div class="icon" style="--i: #223c8b">
+                  <i class="fas fa-code"></i>                
+                </div>
+                <div class="content">
+                  <h2>Développeur Web</h2>
+                  <p>
+                    Le développeur web est un professionnel qui réalise l'ensemble des fonctionnalités techniques d'un site ou d'une application web.
+                  </p>
+                </div>
+              </div>
+             </div>
+             <div class="container">
+              <div class="serviceBox">
+                <div class="icon" style="--i: #30E38E">
+                  <i class="fas fa-pencil-ruler"></i>    
+                </div>
+                <div class="content">
+                  <h2>Graphiste Web</h2>
+                  <p>
+                    Le graphiste Web est un artiste. Réactif, autonome et créatif, il est chargé de concevoir les éléments graphiques des sites web ou des applications mobiles.
+                  </p>
+                </div>
+              </div>
+             </div>
+            </div>
+        </section>
+
+        <div class="second-move section-margin"></div>
+
+        <section class="second-section section right">
+          <div class="progress-wrapper progress-bar-wrapper-right">
+            <div class="progress-bar blue-background"></div>
+          </div>
+
+          <div class="section-intro-wrapper">
+            <h1 class="section-title ">
+              <span class="section-title-text ">Mes passions</span>
+              <div class="section-title-decoration styleOne "></div>
+              <div class="section-title-decoration styleTwo"></div>
+              <div class="section-title-decoration styleThree "></div>
+            </h1>
+            <span class="section-number">02</span>
+          </div>
+
+          <div class="section-detail-wrapper">
+            <h3 class="section-heading">Jeux video 🎮</h3>
+            <p class="section-text">Depuis tout jeune cet univers m'attire et me passionne, pour moi les jeux vidéo sont un moyen de créer des liens avec des personnes du monde entier que ce soit en amitié, en compétition, en création et en divertisement.</p>
+            <h3 class="section-heading">Développement Web 💻</h3>
+            <p class="section-text">Ayant réaliser 2 années au sein de l'école IT AKADEMY, j'ai pu m'aventurer dans ce monde mélangeant des moments de casse tête et d'apprendrissage au quotidient.</p>
+            <h3 class="section-heading">Les frites 🍟 (oui et alors ?)</h3>
+            <p class="section-text">Je ne suis pas Belge pour rien hein !</p>
+          </div>
+        </section>
+
+        <section class="first-section section left">
+          <div class="progress-wrapper progress-bar-wrapper-left">
+            <div class="progress-bar"></div>
+          </div>
+
+          <div class="section-intro-wrapper">
+            <h1 class="section-title">
+              <span class="section-title-text">Mes projets</span>
+              <div class="section-title-decoration styleOne"></div>
+              <div class="section-title-decoration styleTwo"></div>
+              <div class="section-title-decoration styleThree"></div>
+            </h1>
+            <span class="section-number ">03</span>
+          </div>
+          
+
+          <div class="section-detail-wrapper">
+         <h3 class="section-heading">BEAN</h3>
+            <h3 class="section-heading">Site Web d'assitant vocal</h3>
+          <br>
+          <p class="section-text">Création d'une maquette web afin de vendre des assitants vocaux haut de gamme pour les gamers, designer, streamer sous les formes d'ne petite mascotte mignonne pouvant répondre au besoin numérique d'un utilisateur.</p>
+            </div>
+            <img src="/img/Produit.png" alt="">
+        </section>
+        <div class="second-move section-margin"></div>
+
+        <section class="second-section section right">
+          <div class="progress-wrapper progress-bar-wrapper-right">
+            <div class="progress-bar"></div>
+          </div>
+
+          <div class="section-intro-wrapper">
+            <span class="section-number">04</span>
+          </div>
+
+          <div class="section-detail-wrapper">
+            <h3 class="section-heading">Site Web Westfield Lyon Part Dieu</h3>
+            <p class="section-text">Conception d'un site pour un mangasin de Westfield Lyon Part Dieu et de présenter notre projet.</p>
+            <br>
+            <p class="section-text">Le principe serait d'utiliser la caméra de son téléphone dans un magasin de Westfield pour trouver des jetons gagnats permettant d'avoir des offres en magasin telles que des promotions ou des cadeaux.</p>
+          </div>
+          <img src="/img/Accueil – 2.png" alt="">
+        </section>
+        <div class="second-move section-margin"></div>
+
+        <section class="second-section section left">
+          <div class="progress-wrapper progress-bar-wrapper-left">
+            <div class="progress-bar "></div>
+          </div>
+
+          <div class="section-intro-wrapper ">
+            <span class="section-number">05</span>
+          </div>
+
+          <div class="section-detail-wrapper">
+            <h3 class="section-heading">Illustration pour des pulls Nike</h3>
+            <p class="section-text">Création d'illustration vectorielle sur le thème de nike pour ensuite les imprimer sur des pulls afin de les mettres en vente dans notre école.</p>
+          </div>
+          <img src="/img/illustration_nike-final.png" alt="">
+        </section>
+        <div class="second-move section-margin"></div>
+
+
+        <section class="first-section section right">
+          <div class="progress-wrapper progress-bar-wrapper-right">
+            <div class="progress-bar"></div>
+          </div>
+
+          <div class="section-intro-wrapper ">
+            <span class="section-number ">06</span>
+          </div>
+          
+
+          <div class="section-detail-wrapper">
+         <h3 class="section-heading">Landing page pour la marque Nike</h3>
+          <br>
+          <p class="section-text">Création d'une landing page pour mettre en avant une nouvelle paires de la chaine Nike.</p>
+            </div>
+            <img src="/img/nike.png" alt="">
+        </section>
+        <div class="second-move section-margin"></div>
+
+
+        <section class="second-section section left">
+          <div class="progress-wrapper progress-bar-wrapper-left">
+            <div class="progress-bar "></div>
+          </div>
+
+          <div class="section-intro-wrapper ">
+            <span class="section-number">07</span>
+          </div>
+
+          <div class="section-detail-wrapper">
+            <h3 class="section-heading">Le Royaume d'Inès</h3>
+            <p class="section-text">Création et développement d'une site Wordpress sur le thème des robes de mariages orientaux pour une client voulant partager sa passion afin d'attirer des futurs clients dans son magasin.</p>
+          </div>
+          <img src="/img/One Page.png" alt="">
+        </section>
+
+        <div class="third-move section-margin"></div>
+
+        <section class="third-section section right">
+          <div class="progress-wrapper progress-bar-wrapper-right">
+            <div class="progress-bar "></div>
+          </div>
+          <div class="section-intro-wrapper">
+            <h1 class="section-title ">
+              <span class="section-title-text ">Me contacter</span>
+              <div class="section-title-decoration styleOne "></div>
+              <div class="section-title-decoration styleTwo "></div>
+              <div class="section-title-decoration styleThree "></div>
+            </h1>
+            <span class="section-number ">08</span>
+          </div>
+
+          <div class="section-detail-wrapper">
+
+            <div class="yek-social">
+              <ul class="yek-social__list">
+                <li class="yek-social__item">
+                  <a class="yek-social__link" href="mailto:edouard.degeest@gmail.com">
+                    <span class="yek-social__button yek-social__button--gmail">
+                      <img class="yek-social__icon yek-social__icon--gmail sc " src="img/envelope-solid.svg">
+                      <h3 class="reseaux">Email</h3>
+                    </span>
+                  </a>
+                </li>
+                <li class="yek-social__item">
+                  <a class="yek-social__link" href="https://github.com/Edouard-Degeest">
+                    <span class="yek-social__button yek-social__button--github">
+                      <img class="yek-social__icon  yek-social__icon--codepen fab fa-github-alt sc " aria-hidden="true" src="/img/github.svg">
+                      <h3 class="reseaux">Github</h3>
+                    </span>
+                  </a>
+                </li>
+                <li class="yek-social__item">
+                  <a class="yek-social__link" href="https://www.linkedin.com/in/edouard-degeest-975287210/">
+                    <span class="yek-social__button yek-social__button--linkedin">
+                      <img class="yek-social__icon yek-social__icon--linkedin fa-brands sc" src="/img/linkedin-in.svg">
+                      <h3 class="reseaux">Linkedin</h3>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="yek-social">
+            <ul class="yek-social__list">
+                <li class="yek-social__item">
+                  <a class="yek-social__link" href="https://www.instagram.com/edouard_degeest/">
+                    <span class="yek-social__button yek-social__button--instagram">
+                      <img class="yek-social__icon yek-social__icon--instagram fa-brands fa-square-instagram sc " aria-hidden="true" src="/img/instagram.svg">
+                      <h3 class="reseaux">Instagram</h3>
+                    </span>
+                  </a>
+                </li>
+                <li class="yek-social__item">
+                  <a class="yek-social__link" href="tel:0783900320">
+                    <span class="yek-social__button yek-social__button--phone">
+                      <img class="yek-social__icon yek-social__icon--phone fa fa-mobile sc" src="/img/phone-solid.svg">
+                      <h3 class="reseaux">Téléphone</h3>
+                    </span>
+                  </a>
+                </li>
+                <li class="yek-social__item">
+                  <a class="yek-social__link" href="https://goo.gl/maps/ev4UowrrJM5uYbqW6">
+                    <span class="yek-social__button yek-social__button--adress">
+                      <img class="yek-social__icon yek-social__icon--adress fa fa-location-arrow sc" src="/img/location-dot-solid.svg">
+                      <h3 class="reseaux">Adresse</h3>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <h3 class="section-heading">Localisation de mon école actuelle :</h3>
+            <div class="map-responsive">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11135.13965738431!2d4.8250946894295215!3d45.755457765685726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4eb47107b552d%3A0xee594b0f2ed0d0ea!2sEcole%20de%20la%20transformation%20digitale%20Lyon%20-%20Epitech%20Digital!5e0!3m2!1sfr!2sfr!4v1663244075505!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script type="module" src="/scroll.js"></script>
+     
+  </body>
+</html>
